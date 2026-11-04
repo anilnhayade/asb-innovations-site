@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 540" role="img" aria-labelledby="t d">
+  <title id="t">IT staffing</title>
+  <desc id="d">A distributed team of IT professionals connected around a shared project dashboard</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#eef7f8"/><stop offset="1" stop-color="#d9eef0"/></linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0e7c86"/><stop offset="1" stop-color="#0a3440"/></linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e8c25f"/><stop offset="1" stop-color="#c8961e"/></linearGradient>
+  </defs>
+  <rect width="720" height="540" fill="url(#bg)"/>
+  <circle cx="360" cy="270" r="230" fill="#fff" opacity="0.55"/>
+  <circle cx="360" cy="270" r="170" fill="none" stroke="#0e7c86" stroke-opacity="0.25" stroke-dasharray="6 8" stroke-width="2"/>
+  <!-- connection lines -->
+  <g stroke="#0e7c86" stroke-opacity="0.45" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="3 8">
+    <path d="M360 250L150 130"/><path d="M360 250L570 130"/><path d="M360 250L130 400"/><path d="M360 250L590 400"/>
+  </g>
+  <!-- dashboard -->
+  <g>
+    <rect x="240" y="170" width="240" height="160" rx="14" fill="#0a3440"/>
+    <rect x="251" y="181" width="218" height="130" rx="6" fill="url(#screen)"/>
+    <rect x="265" y="195" width="70" height="9" rx="4.5" fill="#fff" opacity="0.9"/>
+    <g fill="#fff" opacity="0.35"><rect x="265" y="214" width="100" height="6" rx="3"/><rect x="265" y="228" width="80" height="6" rx="3"/></g>
+    <g fill="url(#gold)"><rect x="385" y="270" width="14" height="28" rx="2"/><rect x="405" y="256" width="14" height="42" rx="2"/><rect x="425" y="242" width="14" height="56" rx="2"/><rect x="445" y="226" width="14" height="72" rx="2"/></g>
+    <circle cx="300" cy="275" r="22" fill="none" stroke="#fff" stroke-opacity="0.3" stroke-width="8"/>
+    <path d="M300 253a22 22 0 0 1 22 22" fill="none" stroke="#e8c25f" stroke-width="8" stroke-linecap="round"/>
+    <rect x="340" y="330" width="40" height="22" fill="#c9d6da"/>
+    <rect x="316" y="350" width="88" height="10" rx="5" fill="#c9d6da"/>
+  </g>
+  <!-- people -->
+  <g id="p1" transform="translate(150 130)">
+    <circle r="62" fill="#fff"/><circle r="62" fill="none" stroke="#0e7c86" stroke-width="3"/>
+    <circle cy="-12" r="18" fill="#c8961e"/><path d="M-32 38a32 30 0 0 1 64 0z" fill="#0b4f5c"/>
+  </g>
+  <g transform="translate(570 130)">
+    <circle r="62" fill="#fff"/><circle r="62" fill="none" stroke="#c8961e" stroke-width="3"/>
+    <circle cy="-12" r="18" fill="#0e7c86"/><path d="M-32 38a32 30 0 0 1 64 0z" fill="#c8961e"/>
+  </g>
+  <g transform="translate(130 400)">
+    <circle r="62" fill="#fff"/><circle r="62" fill="none" stroke="#c8961e" stroke-width="3"/>
+    <circle cy="-12" r="18" fill="#0a3440"/><path d="M-32 38a32 30 0 0 1 64 0z" fill="#0e7c86"/>
+  </g>
+  <g transform="translate(590 400)">
+    <circle r="62" fill="#fff"/><circle r="62" fill="none" stroke="#0e7c86" stroke-width="3"/>
+    <circle cy="-12" r="18" fill="#c8961e"/><path d="M-32 38a32 30 0 0 1 64 0z" fill="#0a3440"/>
+  </g>
+  <!-- badges -->
+  <g font-family="Plus Jakarta Sans Variable, Arial, sans-serif" font-weight="700">
+    <rect x="278" y="76" width="164" height="34" rx="17" fill="#0b4f5c"/>
+    <text x="360" y="98" text-anchor="middle" font-size="14" fill="#fff" letter-spacing="1">OFFSHORE TEAMS</text>
+    <rect x="296" y="428" width="128" height="34" rx="17" fill="url(#gold)"/>
+    <text x="360" y="450" text-anchor="middle" font-size="14" fill="#0a3440" letter-spacing="1">24 / 7 READY</text>
+  </g>
+</svg>

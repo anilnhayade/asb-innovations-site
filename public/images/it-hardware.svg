@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 540" role="img" aria-labelledby="t d">
+  <title id="t">IT hardware</title>
+  <desc id="d">A desktop computer, a laptop and a network modem on a desk</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#eef7f8"/><stop offset="1" stop-color="#d9eef0"/></linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0e7c86"/><stop offset="1" stop-color="#0a3440"/></linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4f7f8"/><stop offset="1" stop-color="#c9d6da"/></linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e8c25f"/><stop offset="1" stop-color="#c8961e"/></linearGradient>
+  </defs>
+  <rect width="720" height="540" fill="url(#bg)"/>
+  <circle cx="610" cy="90" r="150" fill="#fff" opacity="0.5"/>
+  <circle cx="90" cy="470" r="120" fill="#fff" opacity="0.4"/>
+  <!-- desk -->
+  <rect x="0" y="420" width="720" height="120" fill="#0b4f5c"/>
+  <rect x="0" y="420" width="720" height="10" fill="#0e7c86"/>
+  <!-- desktop monitor -->
+  <g>
+    <rect x="215" y="70" width="330" height="215" rx="14" fill="#0a3440"/>
+    <rect x="227" y="82" width="306" height="188" rx="6" fill="url(#screen)"/>
+    <g opacity="0.95">
+      <rect x="245" y="100" width="90" height="10" rx="5" fill="#fff" opacity="0.9"/>
+      <rect x="245" y="122" width="140" height="7" rx="3.5" fill="#fff" opacity="0.4"/>
+      <rect x="245" y="138" width="110" height="7" rx="3.5" fill="#fff" opacity="0.4"/>
+      <rect x="400" y="100" width="116" height="76" rx="8" fill="#fff" opacity="0.14"/>
+      <g fill="url(#gold)"><rect x="412" y="148" width="14" height="20" rx="2"/><rect x="432" y="136" width="14" height="32" rx="2"/><rect x="452" y="124" width="14" height="44" rx="2"/><rect x="472" y="112" width="14" height="56" rx="2"/></g>
+      <rect x="245" y="196" width="271" height="58" rx="8" fill="#fff" opacity="0.12"/>
+      <circle cx="270" cy="225" r="14" fill="#c8961e"/>
+      <rect x="296" y="214" width="120" height="8" rx="4" fill="#fff" opacity="0.7"/>
+      <rect x="296" y="230" width="86" height="7" rx="3.5" fill="#fff" opacity="0.4"/>
+    </g>
+    <rect x="352" y="285" width="56" height="62" fill="url(#metal)"/>
+    <rect x="312" y="342" width="136" height="14" rx="7" fill="url(#metal)"/>
+    <rect x="312" y="350" width="136" height="6" rx="3" fill="#a9bcc2"/>
+  </g>
+  <!-- keyboard -->
+  <g>
+    <rect x="300" y="384" width="160" height="30" rx="6" fill="#e7eef0"/>
+    <g fill="#b9c9ce"><rect x="308" y="390" width="20" height="7" rx="2"/><rect x="332" y="390" width="20" height="7" rx="2"/><rect x="356" y="390" width="20" height="7" rx="2"/><rect x="380" y="390" width="20" height="7" rx="2"/><rect x="404" y="390" width="20" height="7" rx="2"/><rect x="428" y="390" width="22" height="7" rx="2"/><rect x="316" y="401" width="128" height="7" rx="2"/></g>
+  </g>
+  <!-- laptop -->
+  <g transform="translate(40 250)">
+    <path d="M30 0h190a10 10 0 0 1 10 10v128H20V10A10 10 0 0 1 30 0z" fill="#0a3440"/>
+    <rect x="32" y="12" width="186" height="114" rx="4" fill="url(#screen)"/>
+    <rect x="46" y="28" width="60" height="8" rx="4" fill="#fff" opacity="0.85"/>
+    <rect x="46" y="46" width="110" height="6" rx="3" fill="#fff" opacity="0.4"/>
+    <rect x="46" y="60" width="90" height="6" rx="3" fill="#fff" opacity="0.4"/>
+    <circle cx="188" cy="46" r="20" fill="none" stroke="#e8c25f" stroke-width="7"/>
+    <path d="M0 138h250l-14 20a8 8 0 0 1-6.5 3.5h-209A8 8 0 0 1 14 158z" fill="url(#metal)"/>
+    <rect x="100" y="140" width="50" height="6" rx="3" fill="#a9bcc2"/>
+  </g>
+  <!-- modem / router -->
+  <g transform="translate(520 330)">
+    <rect x="10" y="-80" width="8" height="90" rx="4" fill="#0a3440" transform="rotate(-12 14 10)"/>
+    <rect x="132" y="-80" width="8" height="90" rx="4" fill="#0a3440" transform="rotate(12 136 10)"/>
+    <rect x="0" y="10" width="150" height="62" rx="12" fill="#0a3440"/>
+    <rect x="0" y="10" width="150" height="14" rx="12" fill="#0e7c86"/>
+    <g><circle cx="26" cy="48" r="5" fill="#e8c25f"/><circle cx="46" cy="48" r="5" fill="#7fe0b0"/><circle cx="66" cy="48" r="5" fill="#7fe0b0"/><circle cx="86" cy="48" r="5" fill="#7fe0b0" opacity="0.5"/></g>
+    <rect x="104" y="42" width="30" height="12" rx="3" fill="#0e7c86"/>
+    <path d="M75 -92a40 40 0 0 1 0 0" stroke="none"/>
+    <g fill="none" stroke="#c8961e" stroke-width="5" stroke-linecap="round"><path d="M52 -62a32 32 0 0 1 46 0" opacity="0.5"/><path d="M60 -48a20 20 0 0 1 30 0"/></g>
+    <circle cx="75" cy="-30" r="5" fill="#c8961e"/>
+  </g>
+  <!-- cable -->
+  <path d="M500 392c-30 18-60 10-90 24" fill="none" stroke="#c8961e" stroke-width="4" stroke-linecap="round"/>
+</svg>
