@@ -1,0 +1,63 @@
+---
+import Icon from './Icon.astro';
+import { brochuresForGroup, brochureSize } from '../config/brochures';
+/**
+ * Locked-until-submission download UI.
+ *
+ * IMPORTANT: no PDF URL is rendered here. The client script (src/scripts/lead.ts)
+ * sets each link's href from the bundled brochure map once the group is unlocked.
+ *
+ * variant="inline": compact button(s) shown inside a form's thank-you state.
+ * variant="cards" : list of cards (e.g. Company Downloads) that starts locked.
+ */
+interface Props {
+  group: string;
+  variant?: 'inline' | 'cards';
+}
+const { group, variant = 'inline' } = Astro.props;
+const items = brochuresForGroup(group).map((b) => ({ id: b.id, title: b.title, size: brochureSize(b) }));
+---
+
+<div class:list={['bd', `bd--${variant}`]} data-brochure-group={group} data-state="locked">
+  <ul>
+    {items.map((b) => (
+      <li data-brochure-id={b.id}>
+        {variant === 'cards' && (
+          <div class="bd__meta">
+            <span class="icon-chip"><Icon name="file-text" /></span>
+            <div>
+              <p class="bd__title">{b.title}</p>
+              <p class="bd__size">PDF · {b.size}</p>
+            </div>
+          </div>
+        )}
+        <span class="btn btn--outline bd__locked" data-brochure-locked aria-disabled="true">
+          <Icon name="lock" /> Submit the form to unlock
+        </span>
+        <a class="btn btn--gold bd__link" href="#" data-brochure-link hidden rel="noopener" target="_blank">
+          <Icon name="download" />
+          {variant === 'inline' ? 'Download Brochure (PDF)' : `Download ${b.title} (PDF)`}
+          <span class="bd__sizebadge">{b.size}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<script>
+  import '../scripts/lead';
+</script>
+
+<style>
+  .bd ul { display: grid; gap: var(--sp-4); }
+  .bd--cards ul { grid-template-columns: repeat(2, 1fr); }
+  .bd--cards li { display: flex; flex-direction: column; gap: var(--sp-4); background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: var(--sp-5); box-shadow: var(--shadow-sm); }
+  .bd__meta { display: flex; align-items: center; gap: var(--sp-4); }
+  .bd__title { margin: 0; font: 600 var(--fs-md)/1.3 var(--font-head); color: var(--ink); }
+  .bd__size { margin: 2px 0 0; font-size: var(--fs-sm); color: var(--ink-muted); }
+  .bd__sizebadge { margin-left: 0.25rem; padding: 0.15rem 0.5rem; border-radius: 99px; background: rgb(10 52 64 / 0.12); font-size: var(--fs-xs); letter-spacing: 0.02em; text-transform: none; }
+  .bd__locked { cursor: not-allowed; opacity: 0.8; align-self: flex-start; }
+  .bd__link { align-self: flex-start; }
+  .bd[data-state='unlocked'] .bd__locked { display: none; }
+  @media (max-width: 760px) { .bd--cards ul { grid-template-columns: 1fr; } }
+</style>

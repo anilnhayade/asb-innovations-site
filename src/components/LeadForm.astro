@@ -1,0 +1,189 @@
+---
+import Icon from './Icon.astro';
+import BrochureDownload from './BrochureDownload.astro';
+import { forms, hardwareTypes, type FormKey } from '../config/forms';
+import { site, type EmailKey } from '../config/site';
+import { brochuresForGroup, brochureSize } from '../config/brochures';
+
+/**
+ * Reusable lead form. Posts JSON to Web3Forms (or a compatible endpoint) from the browser.
+ * Behaviour lives in src/scripts/lead.ts: validation, honeypot, loading/success/error states
+ * and the brochure unlock. The access key is chosen by `formKey` so each form reaches the right mailbox.
+ */
+interface Props {
+  id: string;
+  /** Which env key / mailbox this form routes to */
+  formKey: FormKey;
+  /** Page name used in the hidden email subject */
+  pageName: string;
+  title: string;
+  intro?: string;
+  fields?: 'standard' | 'hardware';
+  /** 'requirements' adds an optional "Specifics of your requirements" box; 'message' adds an optional message box */
+  extra?: 'requirements' | 'message';
+  /** Brochure group id (see src/config/brochures.ts) unlocked by a successful submission */
+  brochure?: string;
+  /** Where the unlocked downloads live when they are not inside this form (e.g. /contact) */
+  downloadsHref?: string;
+}
+const { id, formKey, pageName, title, intro, fields = 'standard', extra, brochure, downloadsHref } = Astro.props;
+
+const key = forms.keys[formKey];
+const mailbox = site.emails[formKey as EmailKey];
+const files = brochure ? brochuresForGroup(brochure) : [];
+const brochureNames = files.map((b) => b.title).join(', ');
+const subject = `${pageName} – Website enquiry${brochureNames ? ` | Brochure requested: ${brochureNames}` : ''}`;
+const inlineDownload = !!brochure && !downloadsHref;
+---
+
+<div
+  class="lead"
+  data-lead
+  data-endpoint={forms.endpoint}
+  data-key={key}
+  data-mock={forms.mock ? '1' : '0'}
+  data-group={brochure ?? ''}
+  data-mailbox={mailbox}
+  data-subject={subject}
+  data-page={pageName}
+>
+  <div class="lead__panel" data-lead-panel>
+    <h3 class="lead__title">{title}</h3>
+    {intro && <p class="lead__intro">{intro}</p>}
+
+    {files.length > 0 && (
+      <p class="lead__brochure">
+        <Icon name="download" size={18} />
+        <span>
+          <strong>Download our brochure:</strong>
+          {files.length === 1
+            ? ` complete this form to unlock the ${files[0].title} (PDF, ${brochureSize(files[0])}).`
+            : ' complete this form to unlock our company downloads.'}
+        </span>
+      </p>
+    )}
+
+    <form novalidate data-lead-form aria-describedby={`${id}-error`}>
+      <div class="lead__grid">
+        <div class="field">
+          <label for={`${id}-name`}>Name <span aria-hidden="true">*</span></label>
+          <input id={`${id}-name`} name="name" type="text" autocomplete="name" required />
+          <p class="field__error" data-error-for="name" hidden></p>
+        </div>
+        <div class="field">
+          <label for={`${id}-designation`}>Designation <span aria-hidden="true">*</span></label>
+          <input id={`${id}-designation`} name="designation" type="text" autocomplete="organization-title" required />
+          <p class="field__error" data-error-for="designation" hidden></p>
+        </div>
+        <div class="field">
+          <label for={`${id}-company`}>Company Name <span aria-hidden="true">*</span></label>
+          <input id={`${id}-company`} name="company" type="text" autocomplete="organization" required />
+          <p class="field__error" data-error-for="company" hidden></p>
+        </div>
+        <div class="field">
+          <label for={`${id}-email`}>Email ID <span aria-hidden="true">*</span></label>
+          <input id={`${id}-email`} name="email" type="email" autocomplete="email" required />
+          <p class="field__error" data-error-for="email" hidden></p>
+        </div>
+
+        {fields === 'hardware' && (
+          <>
+            <div class="field field--full">
+              <label for={`${id}-hwtype`}>Type of Hardware required <span aria-hidden="true">*</span></label>
+              <select id={`${id}-hwtype`} name="hardware_type" required>
+                <option value="">Select…</option>
+                {hardwareTypes.map((t) => <option value={t}>{t}</option>)}
+              </select>
+              <p class="field__error" data-error-for="hardware_type" hidden></p>
+            </div>
+            <div class="field field--full">
+              <label for={`${id}-config`}>Detailed configuration <span class="opt">(optional)</span></label>
+              <textarea id={`${id}-config`} name="configuration" rows="4" placeholder="e.g. quantity, processor, RAM, storage, rental period"></textarea>
+            </div>
+          </>
+        )}
+
+        {extra === 'requirements' && (
+          <div class="field field--full">
+            <label for={`${id}-req`}>Specifics of your requirements <span class="opt">(optional)</span></label>
+            <textarea id={`${id}-req`} name="requirements" rows="4"></textarea>
+          </div>
+        )}
+        {extra === 'message' && (
+          <div class="field field--full">
+            <label for={`${id}-msg`}>How can we help? <span class="opt">(optional)</span></label>
+            <textarea id={`${id}-msg`} name="message" rows="4"></textarea>
+          </div>
+        )}
+      </div>
+
+      <!-- Honeypot: hidden from people and assistive tech; bots tend to tick it. -->
+      <div class="hp" aria-hidden="true">
+        <label>Leave this empty <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" /></label>
+      </div>
+
+      <div id={`${id}-error`} class="lead__error" role="alert" data-lead-error hidden></div>
+
+      <button class="btn btn--primary lead__submit" type="submit" data-lead-submit>
+        <span class="lead__submit-label">{files.length > 1 ? 'Submit & unlock downloads' : files.length === 1 ? 'Submit & unlock brochure' : 'Submit'}</span>
+        <span class="spinner" aria-hidden="true"></span>
+        <Icon name="send" />
+      </button>
+      <p class="lead__fine">We only use your details to respond to this enquiry.</p>
+    </form>
+  </div>
+
+  <div class="lead__success" data-lead-success tabindex="-1" hidden>
+    <span class="lead__check"><Icon name="circle-check" size={32} /></span>
+    <h3 data-lead-success-title>Thank you!</h3>
+    <p data-lead-success-text>
+      We have received your enquiry and our team will get back to you shortly at the email address you provided.
+    </p>
+    {inlineDownload && <BrochureDownload group={brochure!} variant="inline" />}
+    {downloadsHref && brochure && (
+      <a class="btn btn--gold" href={downloadsHref}><Icon name="download" /> Go to your downloads</a>
+    )}
+  </div>
+</div>
+
+<script>
+  import '../scripts/lead';
+</script>
+
+<style>
+  .lead { position: relative; }
+  .lead__title { margin-bottom: var(--sp-2); }
+  .lead__intro { color: var(--ink-muted); margin-bottom: var(--sp-4); }
+  .lead__brochure { display: flex; gap: var(--sp-3); align-items: flex-start; margin: var(--sp-4) 0 var(--sp-5); padding: var(--sp-3) var(--sp-4);
+    background: var(--gold-50); border: 1px solid var(--line-warm); border-radius: var(--radius-sm); color: var(--ink); font-size: var(--fs-sm); }
+  .lead__brochure :global(svg) { color: var(--gold-600); flex: none; margin-top: 2px; }
+  .lead__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4); }
+  .field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+  .field--full { grid-column: 1 / -1; }
+  label { font: 600 var(--fs-sm)/1.3 var(--font-body); color: var(--ink); }
+  label span[aria-hidden] { color: var(--danger); }
+  .opt { font-weight: 400; color: var(--ink-muted); }
+  input[type='text'], input[type='email'], select, textarea {
+    width: 100%; padding: 0.7rem 0.85rem; font: inherit; color: var(--ink); background: #fbfcfc;
+    border: 1px solid #b8c9ce; border-radius: var(--radius-sm); min-height: 46px;
+    transition: border-color 0.15s, box-shadow 0.15s, background-color 0.15s;
+  }
+  textarea { resize: vertical; min-height: 110px; }
+  input:hover, select:hover, textarea:hover { border-color: var(--teal-600); }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--teal-600); box-shadow: var(--ring); background: #fff; }
+  [aria-invalid='true'] { border-color: var(--danger) !important; background: var(--danger-bg) !important; }
+  .field__error { margin: 0; font-size: var(--fs-sm); color: var(--danger); }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .lead__error { margin-top: var(--sp-4); padding: var(--sp-3) var(--sp-4); border-radius: var(--radius-sm); background: var(--danger-bg); color: var(--danger); border: 1px solid #f5c2bd; font-size: var(--fs-sm); }
+  .lead__submit { margin-top: var(--sp-5); width: 100%; }
+  .lead__fine { margin: var(--sp-3) 0 0; font-size: var(--fs-xs); color: var(--ink-muted); text-align: center; }
+  .spinner { display: none; width: 16px; height: 16px; border-radius: 50%; border: 2px solid rgb(255 255 255 / 0.35); border-top-color: #fff; animation: spin 0.7s linear infinite; }
+  [data-loading='true'] .spinner { display: inline-block; }
+  [data-loading='true'] .lead__submit :global(svg) { display: none; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .lead__success { text-align: center; padding: var(--sp-6) var(--sp-4); display: flex; flex-direction: column; align-items: center; gap: var(--sp-4); }
+  .lead__success:focus { outline: none; }
+  .lead__check { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: var(--success-bg); color: var(--success); }
+  .lead__success p { max-width: 44ch; }
+  @media (max-width: 560px) { .lead__grid { grid-template-columns: 1fr; } }
+</style>

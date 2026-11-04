@@ -1,0 +1,6 @@
+# Netlify / Cloudflare Pages equivalent of the headers in vercel.json
+/brochures/*
+  X-Robots-Tag: noindex, nofollow, noarchive, nosnippet
+
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
