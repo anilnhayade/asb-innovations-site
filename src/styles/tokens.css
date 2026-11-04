@@ -1,0 +1,71 @@
+/* Design tokens - the single source of truth for brand look & feel. */
+:root {
+  /* Brand */
+  --teal-950: #062a33;
+  --teal-900: #0a3440; /* dark navy text */
+  --teal-800: #0b4350;
+  --teal-700: #0b4f5c; /* primary */
+  --teal-600: #0e7c86; /* primary accent */
+  --teal-100: #d9eef0;
+  --teal-50: #eef7f8;
+  --gold-600: #7d5a08; /* AA contrast on white and tinted backgrounds */
+  --gold-500: #c8961e; /* accent */
+  --gold-400: #dcb04a;
+  --gold-100: #f7ecd0;
+  --gold-50: #fcf7ea;
+
+  /* Neutrals */
+  --white: #ffffff;
+  --bg: #ffffff;
+  --bg-alt: #f6f9f9;
+  --bg-warm: #fbf8f1;
+  --ink: var(--teal-900);
+  --ink-soft: #3d5a64;
+  --ink-muted: #5b747c; /* 4.9:1 on white */
+  --line: #dde7e9;
+  --line-warm: #e9ddc8;
+  --danger: #b42318;
+  --danger-bg: #fef3f2;
+  --success: #0b6b46;
+  --success-bg: #ecf8f2;
+
+  /* Type */
+  --font-body: 'Inter Variable', 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-head: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 1.25rem;
+  --fs-h3: clamp(1.15rem, 1.05rem + 0.5vw, 1.35rem);
+  --fs-h2: clamp(1.75rem, 1.4rem + 1.6vw, 2.5rem);
+  --fs-h1: clamp(2.1rem, 1.5rem + 2.8vw, 3.75rem);
+
+  /* Space */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 3rem;
+  --sp-8: 4rem;
+  --sp-9: 5rem;
+  --section-y: clamp(3.5rem, 2.5rem + 4vw, 5.5rem);
+  --gutter: clamp(1rem, 0.5rem + 2vw, 2rem);
+  --container: 1240px;
+  --container-narrow: 860px;
+
+  /* Shape & depth */
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 1px 2px rgb(10 52 64 / 0.06);
+  --shadow: 0 8px 24px -8px rgb(10 52 64 / 0.16);
+  --shadow-lg: 0 24px 48px -16px rgb(10 52 64 / 0.28);
+  --ring: 0 0 0 3px rgb(14 124 134 / 0.35);
+
+  /* Layout */
+  --header-h: 76px;
+  --topbar-h: 36px;
+}
