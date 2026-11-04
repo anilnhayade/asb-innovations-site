@@ -1,0 +1,159 @@
+---
+import Icon from './Icon.astro';
+/**
+ * Renders a list of content items in one of several looks:
+ *  - infographic : numbered cards (big numeral, icon, title, body) in a 2-column grid
+ *  - rows        : numbered card with a bullet list of label/description pairs
+ *  - cards       : icon + title + body (3 columns)
+ *  - showcase    : dark gradient panel with translucent cards (used for "Why choose us")
+ *  - labelled    : checklist of "Label: description" bullets (2 columns)
+ *  - plain       : simple checklist
+ */
+interface Item {
+  title?: string;
+  body?: string;
+  icon?: string;
+  list?: string[];
+  after?: string;
+  points?: (string | { title?: string; body: string })[];
+}
+interface Props {
+  items: Item[];
+  variant?: 'infographic' | 'rows' | 'cards' | 'showcase' | 'labelled' | 'plain';
+}
+const { items, variant = 'cards' } = Astro.props;
+const num = (i: number) => String(i + 1).padStart(2, '0');
+const paras = (s?: string) => (s ? s.split('\n\n') : []);
+---
+
+{variant === 'infographic' || variant === 'rows' ? (
+  <ol class:list={['fg', 'fg--num', { 'fg--rows': variant === 'rows' }]}>
+    {items.map((it, i) => (
+      <li class="numcard" data-tone={i % 2 === 0 ? 'teal' : 'gold'}>
+        <span class="numcard__num" aria-hidden="true">{num(i)}</span>
+        <div class="numcard__head">
+          {it.icon && <span class="icon-chip"><Icon name={it.icon} /></span>}
+          <h3><span class="sr-only">{i + 1}. </span>{it.title}</h3>
+        </div>
+        {paras(it.body).map((p) => <p>{p}</p>)}
+        {it.list && (
+          <ul class="numcard__list">
+            {it.list.map((l) => <li><Icon name="check" size={16} />{l}</li>)}
+          </ul>
+        )}
+        {it.after && <p>{it.after}</p>}
+        {it.points && (
+          <ul class="numcard__points">
+            {it.points.map((p) => (
+              <li>
+                <Icon name="circle-check" size={18} />
+                <span>
+                  {typeof p === 'string' ? p : (<>{p.title && <strong>{p.title}: </strong>}{p.body}</>)}
+                </span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </li>
+    ))}
+  </ol>
+) : variant === 'showcase' ? (
+  <div class="show">
+    <ul class="show__grid">
+      {items.map((it) => (
+        <li class="show__card">
+          {it.icon && <span class="show__icon"><Icon name={it.icon} /></span>}
+          <h3>{it.title}</h3>
+          <p>{it.body}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+) : variant === 'labelled' || variant === 'plain' ? (
+  <ul class="fg fg--check">
+    {items.map((it) => (
+      <li>
+        <span class="check"><Icon name="check" size={16} strokeWidth={3} /></span>
+        <p>{it.title && <strong>{it.title}: </strong>}{it.body}</p>
+      </li>
+    ))}
+  </ul>
+) : (
+  <ul class="fg fg--cards">
+    {items.map((it) => (
+      <li class="fcard">
+        {it.icon && <span class="icon-chip"><Icon name={it.icon} /></span>}
+        <h3>{it.title}</h3>
+        {paras(it.body).map((p) => <p>{p}</p>)}
+      </li>
+    ))}
+  </ul>
+)}
+
+<style>
+  /* ---- numbered infographic ---- */
+  .fg--num { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-5); counter-reset: n; }
+  .numcard { position: relative; overflow: hidden; background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg);
+    padding: var(--sp-6) var(--sp-6) var(--sp-6); box-shadow: var(--shadow-sm); transition: transform 0.2s, box-shadow 0.2s; }
+  .numcard:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+  .numcard::before { content: ''; position: absolute; inset: 0 0 auto; height: 4px; background: var(--teal-600); }
+  .numcard[data-tone='gold']::before { background: var(--gold-500); }
+  .numcard__num { position: absolute; top: 10px; right: 18px; font: 800 4.5rem/1 var(--font-head); letter-spacing: -0.04em;
+    color: transparent; -webkit-text-stroke: 1.5px #b9dde1; pointer-events: none; }
+  .numcard[data-tone='gold'] .numcard__num { -webkit-text-stroke-color: #ecd9a5; }
+  .numcard__head { display: flex; align-items: center; gap: var(--sp-4); margin-bottom: var(--sp-4); padding-right: 4.5rem; }
+  .numcard[data-tone='gold'] .icon-chip { background: var(--gold-50); color: var(--gold-600); border-color: var(--gold-100); }
+  .numcard p { font-size: var(--fs-base); }
+  .numcard__list { display: grid; gap: var(--sp-2); margin: var(--sp-4) 0; padding: var(--sp-4); background: var(--bg-alt); border-radius: var(--radius-sm); }
+  .numcard__list li, .numcard__points li { display: flex; gap: var(--sp-3); align-items: flex-start; }
+  .numcard__list :global(svg) { color: var(--teal-600); margin-top: 4px; flex: none; }
+  .numcard__points { display: grid; gap: var(--sp-3); margin-top: var(--sp-4); padding-top: var(--sp-4); border-top: 1px dashed var(--line); }
+  .numcard__points :global(svg) { color: var(--gold-500); margin-top: 3px; flex: none; }
+  .numcard__points strong { color: var(--ink); font-weight: 600; }
+  .fg--num > .numcard:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .fg--rows { grid-template-columns: 1fr; }
+  .fg--rows .numcard { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: var(--sp-7); align-items: start; }
+  .fg--rows .numcard__head, .fg--rows .numcard > p { grid-column: 1; }
+  .fg--rows .numcard__points { grid-column: 2; grid-row: 1 / span 3; margin: 0; padding: var(--sp-4); border: 0; background: var(--bg-alt); border-radius: var(--radius); }
+  @media (max-width: 560px) {
+    .numcard { padding: var(--sp-5); }
+    .numcard__head { flex-direction: column; align-items: flex-start; gap: var(--sp-3); padding-right: 3rem; }
+    .numcard__num { font-size: 3rem; top: 12px; right: 14px; }
+  }
+  @media (max-width: 860px) {
+    .fg--num { grid-template-columns: 1fr; }
+    .fg--rows .numcard { display: block; }
+    .fg--rows .numcard__points { margin-top: var(--sp-4); }
+  }
+
+  /* ---- cards ---- */
+  .fg--cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-5); }
+  .fcard { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: var(--sp-6); box-shadow: var(--shadow-sm); transition: box-shadow 0.2s, border-color 0.2s; }
+  .fcard:hover { box-shadow: var(--shadow); border-color: var(--teal-100); }
+  .fcard .icon-chip { margin-bottom: var(--sp-4); }
+  .fcard h3 { margin-bottom: var(--sp-3); }
+  .fcard p { font-size: var(--fs-base); }
+  @media (max-width: 1000px) { .fg--cards { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) { .fg--cards { grid-template-columns: 1fr; } }
+
+  /* ---- showcase ---- */
+  .show { position: relative; overflow: hidden; padding: clamp(1.25rem, 1rem + 2vw, 2.5rem); border-radius: var(--radius-lg);
+    background: radial-gradient(1200px 400px at 90% -10%, rgb(200 150 30 / 0.28), transparent 60%), linear-gradient(135deg, var(--teal-900), var(--teal-700) 60%, var(--teal-600)); box-shadow: var(--shadow-lg); }
+  .show::after { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgb(255 255 255 / 0.12) 1px, transparent 1px); background-size: 22px 22px; pointer-events: none; mask-image: linear-gradient(180deg, transparent, #000 40%, transparent); }
+  .show__grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-4); }
+  .show__card { background: rgb(255 255 255 / 0.08); border: 1px solid rgb(255 255 255 / 0.18); border-radius: var(--radius); padding: var(--sp-5); backdrop-filter: blur(4px); }
+  .show__icon { display: inline-grid; place-items: center; width: 46px; height: 46px; border-radius: 12px; background: var(--gold-500); color: var(--teal-950); margin-bottom: var(--sp-3); }
+  .show__icon :global(svg) { width: 22px; height: 22px; }
+  .show__card h3 { color: #fff; font-size: var(--fs-md); margin-bottom: var(--sp-2); }
+  .show__card p { color: rgb(255 255 255 / 0.86); font-size: var(--fs-sm); line-height: 1.6; }
+  @media (max-width: 1000px) { .show__grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) { .show__grid { grid-template-columns: 1fr; } }
+
+  /* ---- checklist ---- */
+  .fg--check { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-4) var(--sp-6); }
+  .fg--check li { display: flex; gap: var(--sp-3); align-items: flex-start; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: var(--sp-4) var(--sp-5); }
+  .fg--check p { margin: 0; font-size: var(--fs-base); }
+  .fg--check strong { color: var(--ink); }
+  .check { display: grid; place-items: center; flex: none; width: 26px; height: 26px; margin-top: 1px; border-radius: 50%; background: var(--teal-600); color: #fff; }
+  @media (max-width: 760px) { .fg--check { grid-template-columns: 1fr; } }
+</style>

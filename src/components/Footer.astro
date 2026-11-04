@@ -1,0 +1,69 @@
+---
+import Icon from './Icon.astro';
+import { site } from '../config/site';
+import { servicesNav, footerLinks } from '../config/nav';
+const year = new Date().getFullYear();
+---
+
+<footer class="ftr">
+  <div class="container ftr__grid">
+    <div class="ftr__brand">
+      <a href="/" class="ftr__logo" aria-label={`${site.name} – home`}>
+        <img src="/images/logo.png" alt={site.name} width="200" height="41" loading="lazy" />
+      </a>
+      <p>{site.description}</p>
+      <p class="ftr__tag">{site.tagline}</p>
+    </div>
+
+    <nav aria-labelledby="ftr-services">
+      <h2 id="ftr-services" class="ftr__h">Services</h2>
+      <ul>
+        {servicesNav.map((s) => <li><a href={s.href}>{s.label}</a></li>)}
+      </ul>
+    </nav>
+
+    <nav aria-labelledby="ftr-company">
+      <h2 id="ftr-company" class="ftr__h">Company</h2>
+      <ul>
+        {footerLinks.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+      </ul>
+    </nav>
+
+    <div>
+      <h2 class="ftr__h">Contact</h2>
+      <ul class="ftr__contact">
+        <li><Icon name="mail" size={18} /><div><span>General</span><a href={`mailto:${site.emails.info}`}>{site.emails.info}</a></div></li>
+        <li><Icon name="network" size={18} /><div><span>NOC</span><a href={`mailto:${site.emails.noc}`}>{site.emails.noc}</a></div></li>
+        <li><Icon name="laptop" size={18} /><div><span>Hardware rental</span><a href={`mailto:${site.emails.hardware}`}>{site.emails.hardware}</a></div></li>
+        <li><Icon name="map-pin" size={18} /><div><span>Offshore facility</span>Mumbai, India</div></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ftr__bar">
+    <div class="container ftr__barinner">
+      <p>© {year} {site.legalName}. All rights reserved.</p>
+      <p>{site.tagline}</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .ftr { background: var(--teal-950); color: rgb(255 255 255 / 0.78); font-size: var(--fs-sm); }
+  .ftr__grid { display: grid; grid-template-columns: 1.4fr 1fr 0.7fr 1.3fr; gap: var(--sp-7); padding-block: var(--sp-8) var(--sp-7); }
+  .ftr__logo { display: inline-block; background: #fff; border-radius: var(--radius); padding: 0.6rem 0.9rem; line-height: 0; margin-bottom: var(--sp-4); }
+  .ftr__logo img { height: 38px; width: auto; }
+  .ftr__brand p { max-width: 38ch; }
+  .ftr__tag { margin-top: var(--sp-4); color: var(--gold-400); font-weight: 600; letter-spacing: 0.04em; }
+  .ftr__h { font: 700 var(--fs-xs) var(--font-body); letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-400); margin-bottom: var(--sp-4); }
+  .ftr ul { display: grid; gap: var(--sp-3); }
+  .ftr a { color: rgb(255 255 255 / 0.85); text-decoration: none; overflow-wrap: anywhere; }
+  .ftr a:hover { color: #fff; text-decoration: underline; }
+  .ftr__contact li { display: flex; gap: var(--sp-3); align-items: flex-start; }
+  .ftr__contact :global(svg) { color: var(--gold-400); flex: none; margin-top: 2px; }
+  .ftr__contact span { display: block; font-size: var(--fs-xs); color: rgb(255 255 255 / 0.55); text-transform: uppercase; letter-spacing: 0.06em; }
+  .ftr__bar { border-top: 1px solid rgb(255 255 255 / 0.12); }
+  .ftr__barinner { display: flex; justify-content: space-between; gap: var(--sp-4); padding-block: var(--sp-4); flex-wrap: wrap; }
+  .ftr__barinner p { margin: 0; color: rgb(255 255 255 / 0.6); font-size: var(--fs-xs); }
+  @media (max-width: 960px) { .ftr__grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .ftr__grid { grid-template-columns: 1fr; gap: var(--sp-6); } }
+</style>

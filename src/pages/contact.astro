@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageBanner from '../components/PageBanner.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import LeadForm from '../components/LeadForm.astro';
+import BrochureDownload from '../components/BrochureDownload.astro';
+import Icon from '../components/Icon.astro';
+import contact from '../content/pages/contact.json';
+import { site, type EmailKey } from '../config/site';
+
+const c = contact;
+const crumbs = [{ label: 'Home', href: '/' }, { label: 'Contact Us' }];
+---
+
+<BaseLayout title={c.seo.title} description={c.seo.description}>
+  <PageBanner {...c.banner} {crumbs} />
+
+  <section class="section" aria-labelledby="enquiry-h">
+    <div class="container grid">
+      <div class="card formcard" id="enquiry">
+        <h2 id="enquiry-h" class="sr-only">{c.form.title}</h2>
+        <LeadForm
+          id="contact"
+          formKey="info"
+          pageName="Contact page"
+          title={c.form.title}
+          intro={c.form.intro}
+          extra="message"
+          brochure={c.downloads.brochure}
+          downloadsHref="#downloads"
+        />
+      </div>
+
+      <aside class="card mail" aria-labelledby="mail-h">
+        <h2 id="mail-h" class="mail__h">{c.emails.title}</h2>
+        <p>{c.emails.intro}</p>
+        <ul>
+          {c.emails.items.map((m) => (
+            <li>
+              <span class="icon-chip"><Icon name="mail" /></span>
+              <div>
+                <a href={`mailto:${site.emails[m.key as EmailKey]}`}>{site.emails[m.key as EmailKey]}</a>
+                <p>{m.label}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="downloads" aria-labelledby="downloads-h">
+    <div class="container">
+      <SectionHeading eyebrow={c.downloads.eyebrow} title={c.downloads.title} intro={c.downloads.intro} />
+      <BrochureDownload group={c.downloads.brochure} variant="cards" />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: var(--sp-6); align-items: start; }
+  .formcard { padding: clamp(1.25rem, 1rem + 1.5vw, 2.25rem); }
+  .mail__h { font-size: var(--fs-h3); margin-bottom: var(--sp-3); }
+  .mail ul { display: grid; gap: var(--sp-5); margin-top: var(--sp-5); }
+  .mail li { display: flex; gap: var(--sp-4); align-items: flex-start; }
+  .mail a { font-weight: 600; overflow-wrap: anywhere; }
+  .mail li p { margin: 2px 0 0; font-size: var(--fs-sm); color: var(--ink-muted); }
+  @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+</style>

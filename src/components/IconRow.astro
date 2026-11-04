@@ -1,0 +1,26 @@
+---
+import ServiceCard from './ServiceCard.astro';
+/** A wrapping row of icon cards. `columns` = how many per row on desktop; the last row is centred. */
+interface Props {
+  items: { icon: string; title: string; href?: string }[];
+  columns?: 2 | 3 | 4;
+}
+const { items, columns = 3 } = Astro.props;
+---
+
+<ul class="ir" style={`--cols:${columns}`}>
+  {items.map((it) => <li><ServiceCard {...it} /></li>)}
+</ul>
+
+<style>
+  .ir { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-5); }
+  .ir li { flex: 0 1 calc((100% - (var(--cols) - 1) * var(--sp-5)) / var(--cols)); min-width: 0; }
+  @media (max-width: 760px) {
+    .ir li { flex-basis: calc((100% - var(--sp-4)) / 2); }
+    .ir { gap: var(--sp-4); }
+  }
+  @media (max-width: 420px) {
+    .ir { gap: var(--sp-3); }
+    .ir li { flex-basis: calc((100% - var(--sp-3)) / 2); }
+  }
+</style>

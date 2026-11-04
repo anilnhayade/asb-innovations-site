@@ -1,0 +1,181 @@
+---
+import { getEntry } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import IconRow from '../components/IconRow.astro';
+import Icon from '../components/Icon.astro';
+import BannerArt from '../components/BannerArt.astro';
+import home from '../content/pages/home.json';
+
+const h = home;
+---
+
+<BaseLayout title={h.seo.title} description={h.seo.description}>
+  <!-- Hero banner -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__text">
+        <p class="hero__pill"><span class="dot"></span>{h.hero.eyebrow}</p>
+        <h1>{h.hero.title}</h1>
+        <p class="hero__sub">{h.hero.subtitle}</p>
+        <div class="hero__actions">
+          <a class="btn btn--gold" href={h.hero.primaryCta.href}>{h.hero.primaryCta.label} <Icon name="arrow-right" /></a>
+          <a class="btn btn--ghost-light" href={h.hero.secondaryCta.href}>{h.hero.secondaryCta.label}</a>
+        </div>
+        <ul class="hero__badges">
+          {h.hero.badges.map((b) => <li><Icon name="check" size={16} strokeWidth={3} />{b}</li>)}
+        </ul>
+      </div>
+      <div class="hero__art">
+        <div class="hero__panel">
+          <BannerArt art="home" icon="globe" />
+          <ul class="hero__chips" aria-label="Our approach">
+            <li>Innovate</li><li>Integrate</li><li>Accelerate</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro + the 3 goals -->
+  <section class="section" aria-labelledby="intro-h">
+    <div class="container">
+      <div class="intro">
+        <div class="intro__text">
+          <p class="eyebrow">{h.intro.eyebrow}</p>
+          <h2 id="intro-h" class="intro__h">{h.intro.goalsLead.replace(/:$/, "")}</h2>
+        </div>
+        <div class="prose"><p>{h.intro.paragraphs[0]}</p></div>
+      </div>
+      <ul class="goals">
+        {h.intro.goals.map((g, i) => (
+          <li class="goal">
+            <span class="goal__num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+            <span class="icon-chip"><Icon name={g.icon} /></span>
+            <p>{g.body}</p>
+          </li>
+        ))}
+      </ul>
+      <p class="closing">{h.intro.closing}</p>
+    </div>
+  </section>
+
+  <!-- Our Offerings -->
+  <section class="section section--alt" id="offerings" aria-labelledby="offerings-h">
+    <div class="container">
+      <SectionHeading eyebrow={h.offerings.eyebrow} title={h.offerings.title} intro={h.offerings.intro} align="center" />
+    </div>
+  </section>
+
+  <!-- Managed Services -->
+  <section class="section section--tight offer" aria-labelledby="managed-h">
+    <div class="container">
+      <div class="offer__head">
+        <h3 id="managed-h" class="offer__title">{h.managed.title}</h3>
+        <div class="prose">{h.managed.paragraphs.map((p) => <p>{p}</p>)}</div>
+      </div>
+      <ProcessSteps steps={h.managed.steps} />
+      <div class="gap"></div>
+      <IconRow items={h.managed.services} columns={3} />
+    </div>
+  </section>
+
+  <!-- Cloud Infrastructure -->
+  <section class="section section--alt" aria-labelledby="cloud-h">
+    <div class="container">
+      <div class="offer__head">
+        <h3 id="cloud-h" class="offer__title">{h.cloud.title}</h3>
+        <div class="prose">{h.cloud.paragraphs.map((p) => <p>{p}</p>)}</div>
+        <ul class="platforms" aria-label="Cloud platforms">
+          {h.cloud.platforms.map((p) => <li><Icon name="cloud" size={18} />{p}</li>)}
+        </ul>
+      </div>
+      <IconRow items={h.cloud.services} columns={3} />
+    </div>
+  </section>
+
+  <!-- IT Staffing -->
+  <section class="section" aria-labelledby="staffing-h">
+    <div class="container split">
+      <div class="split__text">
+        <h3 id="staffing-h" class="offer__title">{h.staffing.title}</h3>
+        <div class="prose">{h.staffing.paragraphs.map((p) => <p>{p}</p>)}</div>
+      </div>
+      <figure class="split__img">
+        <img src={h.staffing.image.src} alt={h.staffing.image.alt} width="720" height="540" loading="lazy" decoding="async" />
+      </figure>
+    </div>
+  </section>
+
+  <!-- IT Hardware Rental and Sales -->
+  <section class="section section--alt" aria-labelledby="hardware-h">
+    <div class="container split split--rev">
+      <div class="split__text">
+        <h3 id="hardware-h" class="offer__title">{h.hardware.title}</h3>
+        <div class="prose">{h.hardware.paragraphs.map((p) => <p>{p}</p>)}</div>
+        <a class="btn btn--primary" href={h.hardware.cta.href}>{h.hardware.cta.label} <Icon name="arrow-right" /></a>
+      </div>
+      <figure class="split__img">
+        <a href={h.hardware.cta.href} aria-label={h.hardware.title}>
+          <img src={h.hardware.image.src} alt={h.hardware.image.alt} width="720" height="540" loading="lazy" decoding="async" />
+        </a>
+      </figure>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero { position: relative; overflow: hidden; color: #fff;
+    background: radial-gradient(900px 480px at 88% 0%, rgb(200 150 30 / 0.28), transparent 60%), linear-gradient(115deg, var(--teal-950), var(--teal-800) 50%, var(--teal-600)); }
+  .hero::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgb(255 255 255 / 0.1) 1px, transparent 1px); background-size: 26px 26px; mask-image: linear-gradient(90deg, transparent 10%, #000 80%); pointer-events: none; }
+  .hero__inner { position: relative; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: var(--sp-7); align-items: center; padding-block: clamp(3rem, 2rem + 5vw, 6rem); }
+  .hero__pill { display: inline-flex; align-items: center; gap: 0.5rem; margin: 0 0 var(--sp-5); padding: 0.4rem 0.9rem; border-radius: 6px; background: rgb(255 255 255 / 0.12); border: 1px solid rgb(255 255 255 / 0.25);
+    font: 700 var(--fs-xs) var(--font-body); letter-spacing: 0.12em; text-transform: uppercase; color: #fff; }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold-400); }
+  .hero h1 { color: #fff; max-width: 17ch; }
+  .hero__sub { margin: var(--sp-5) 0 var(--sp-6); max-width: 52ch; font-size: var(--fs-lg); color: rgb(255 255 255 / 0.9); }
+  .hero__actions { display: flex; flex-wrap: wrap; gap: var(--sp-4); }
+  .hero__badges { display: flex; flex-wrap: wrap; gap: var(--sp-3) var(--sp-6); margin-top: var(--sp-6); padding-top: var(--sp-5); border-top: 1px solid rgb(255 255 255 / 0.2); font-size: var(--fs-sm); color: rgb(255 255 255 / 0.9); }
+  .hero__badges li { display: inline-flex; align-items: center; gap: 0.5rem; }
+  .hero__badges :global(svg) { color: var(--gold-400); }
+  .hero__panel { padding: var(--sp-6); border-radius: var(--radius-lg); background: rgb(255 255 255 / 0.08); border: 1px solid rgb(255 255 255 / 0.2); backdrop-filter: blur(6px); box-shadow: var(--shadow-lg); }
+  .hero__chips { display: flex; justify-content: center; flex-wrap: wrap; gap: var(--sp-2); margin-top: var(--sp-5); }
+  .hero__chips li { padding: 0.35rem 0.8rem; border-radius: 99px; border: 1px solid var(--gold-400); color: var(--gold-400); font: 700 var(--fs-xs) var(--font-body); letter-spacing: 0.1em; text-transform: uppercase; }
+  @media (max-width: 960px) {
+    .hero__inner { grid-template-columns: 1fr; }
+    .hero__art { max-width: 420px; }
+    .hero h1 { max-width: none; }
+  }
+  @media (max-width: 560px) { .hero__art { display: none; } .hero__actions .btn { width: 100%; } }
+
+  /* Intro */
+  .intro { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: var(--sp-7); align-items: start; margin-bottom: var(--sp-7); }
+  .intro .eyebrow { margin-bottom: var(--sp-3); }
+  .intro__h { font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.1rem); max-width: 18ch; }
+  .goals { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-5); }
+  .goal { position: relative; background: #fff; border: 1px solid var(--line-warm); border-radius: var(--radius-lg); padding: var(--sp-6); box-shadow: var(--shadow-sm); }
+  .goal::before { content: ''; position: absolute; inset: 0 0 auto; height: 4px; border-radius: var(--radius-lg) var(--radius-lg) 0 0; background: linear-gradient(90deg, var(--teal-600), var(--gold-500)); }
+  .goal__num { position: absolute; top: 14px; right: 20px; font: 800 3.25rem/1 var(--font-head); color: transparent; -webkit-text-stroke: 1.5px var(--gold-100); }
+  .goal .icon-chip { margin-bottom: var(--sp-4); }
+  .goal p { margin: 0; color: var(--ink); font-weight: 500; }
+  .closing { margin-top: var(--sp-7); max-width: 80ch; font-size: var(--fs-md); color: var(--ink); padding-left: var(--sp-5); border-left: 4px solid var(--gold-500); }
+  @media (max-width: 900px) { .intro, .goals { grid-template-columns: 1fr; } .intro { gap: var(--sp-4); } }
+
+  /* Offerings */
+  .offer__head { max-width: 78ch; margin-bottom: var(--sp-7); }
+  .offer__title { font-size: var(--fs-h2); margin-bottom: var(--sp-4); position: relative; padding-left: var(--sp-5); font-weight: 600; letter-spacing: -0.02em; line-height: 1.15; }
+  .offer__title::before { content: ''; position: absolute; left: 0; top: 0.15em; bottom: 0.15em; width: 5px; border-radius: 3px; background: var(--gold-500); }
+  .gap { height: var(--sp-6); }
+  .platforms { display: flex; flex-wrap: wrap; gap: var(--sp-3); margin-top: var(--sp-5); }
+  .platforms li { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 99px; background: #fff; border: 1px solid var(--teal-100); color: var(--teal-700); font-weight: 600; font-size: var(--fs-sm); }
+  .split { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: clamp(2rem, 1rem + 4vw, 4.5rem); align-items: center; }
+  .split--rev { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); }
+  .split--rev .split__text { order: 2; }
+  .split__text .btn { margin-top: var(--sp-5); }
+  .split__img { margin: 0; border-radius: var(--radius-lg); overflow: hidden; background: var(--teal-50); border: 1px solid var(--line); box-shadow: var(--shadow); }
+  .split__img img { width: 100%; height: auto; }
+  .split__img a { display: block; }
+  @media (max-width: 900px) { .split, .split--rev { grid-template-columns: 1fr; } .split--rev .split__text { order: 0; } }
+</style>

@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+---
+
+<BaseLayout title="Page not found | ASB Innovations" description="The page you are looking for could not be found." noindex>
+  <section class="section">
+    <div class="container container--narrow nf">
+      <p class="eyebrow">404</p>
+      <h1>Page not found</h1>
+      <p>Sorry, we could not find that page. It may have moved, or the address may be mistyped.</p>
+      <div class="nf__actions">
+        <a class="btn btn--primary" href="/">Back to home <Icon name="arrow-right" /></a>
+        <a class="btn btn--outline" href="/contact">Contact us</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .nf { text-align: center; padding-block: var(--sp-8); }
+  .nf .eyebrow { justify-content: center; margin-bottom: var(--sp-3); }
+  .nf p { margin-block: var(--sp-4) 0; font-size: var(--fs-md); }
+  .nf__actions { display: flex; flex-wrap: wrap; gap: var(--sp-4); justify-content: center; margin-top: var(--sp-6); }
+</style>

@@ -1,0 +1,29 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  intro?: string;
+  align?: 'left' | 'center';
+  as?: 'h2' | 'h3';
+  light?: boolean;
+}
+const { eyebrow, title, intro, align = 'left', as: Tag = 'h2', light = false } = Astro.props;
+const paras = intro ? intro.split('\n\n') : [];
+---
+
+<header class:list={['sh', `sh--${align}`, { 'sh--light': light }]}>
+  {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+  <Tag>{title}</Tag>
+  {paras.length > 0 && <div class="sh__intro">{paras.map((p) => <p>{p}</p>)}</div>}
+</header>
+
+<style>
+  .sh { max-width: 62ch; margin-bottom: var(--sp-7); }
+  .sh--center { margin-inline: auto; text-align: center; }
+  .sh--center .eyebrow { justify-content: center; }
+  .sh .eyebrow { margin-bottom: var(--sp-3); }
+  .sh__intro { margin-top: var(--sp-4); font-size: var(--fs-md); color: var(--ink-soft); }
+  .sh--light h2, .sh--light h3 { color: #fff; }
+  .sh--light .sh__intro { color: rgb(255 255 255 / 0.85); }
+  .sh--light .eyebrow { color: var(--gold-400); }
+</style>

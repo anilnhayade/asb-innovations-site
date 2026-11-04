@@ -1,0 +1,60 @@
+---
+import Icon from './Icon.astro';
+interface Item {
+  title?: string;
+  tag?: string;
+  icon?: string;
+  body?: string;
+  points?: (string | { title?: string; body: string })[];
+}
+interface Props { items: Item[] }
+const { items } = Astro.props;
+---
+
+<div class="cmp">
+  {items.map((it, i) => (
+    <>
+      {i === 1 && <span class="cmp__vs" aria-hidden="true">VS</span>}
+      <article class="cmp__card" data-tone={i === 0 ? 'teal' : 'gold'}>
+        <header>
+          {it.icon && <span class="cmp__icon"><Icon name={it.icon} /></span>}
+          <div>
+            {it.tag && <p class="cmp__tag">{it.tag}</p>}
+            <h3>{it.title}</h3>
+          </div>
+        </header>
+        <p>{it.body}</p>
+        {it.points && (
+          <ul>
+            {it.points.map((p) => (
+              <li><Icon name="circle-check" size={18} /><span>{typeof p === 'string' ? p : p.body}</span></li>
+            ))}
+          </ul>
+        )}
+      </article>
+    </>
+  ))}
+</div>
+
+<style>
+  .cmp { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-6); align-items: stretch; }
+  .cmp__vs { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 2; width: 52px; height: 52px; border-radius: 50%;
+    display: grid; place-items: center; background: var(--ink); color: #fff; font: 800 0.85rem var(--font-head); letter-spacing: 0.06em; border: 4px solid var(--bg-alt); }
+  .cmp__card { position: relative; background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg); padding: var(--sp-6); box-shadow: var(--shadow); overflow: hidden; display: flex; flex-direction: column; gap: var(--sp-4); }
+  .cmp__card::before { content: ''; position: absolute; inset: 0 0 auto; height: 6px; background: var(--teal-600); }
+  .cmp__card[data-tone='gold']::before { background: var(--gold-500); }
+  .cmp__card header { display: flex; align-items: center; gap: var(--sp-4); }
+  .cmp__icon { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 16px; background: var(--teal-700); color: #fff; flex: none; }
+  .cmp__card[data-tone='gold'] .cmp__icon { background: var(--gold-500); color: var(--teal-950); }
+  .cmp__icon :global(svg) { width: 28px; height: 28px; }
+  .cmp__tag { margin: 0 0 4px; font: 700 var(--fs-xs) var(--font-body); letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-600); }
+  .cmp__card > p { margin: 0; }
+  .cmp ul { display: grid; gap: var(--sp-3); margin-top: auto; padding-top: var(--sp-4); border-top: 1px dashed var(--line); }
+  .cmp li { display: flex; gap: var(--sp-3); align-items: flex-start; color: var(--ink); font-weight: 500; }
+  .cmp li :global(svg) { color: var(--teal-600); flex: none; margin-top: 3px; }
+  .cmp__card[data-tone='gold'] li :global(svg) { color: var(--gold-500); }
+  @media (max-width: 860px) {
+    .cmp { grid-template-columns: 1fr; }
+    .cmp__vs { position: static; transform: none; margin: calc(var(--sp-4) * -0.5) auto; }
+  }
+</style>

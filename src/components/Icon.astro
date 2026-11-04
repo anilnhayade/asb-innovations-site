@@ -1,0 +1,29 @@
+---
+/**
+ * Inline Lucide icon (lucide-static). Inherits colour from `currentColor`.
+ * Usage: <Icon name="shield-check" size={24} />
+ */
+interface Props {
+  name: string;
+  size?: number;
+  class?: string;
+  strokeWidth?: number;
+}
+const { name, size, class: className, strokeWidth } = Astro.props;
+
+const icons = import.meta.glob('/node_modules/lucide-static/icons/*.svg', {
+  query: '?raw',
+  import: 'default',
+}) as Record<string, () => Promise<string>>;
+
+const loader = icons[`/node_modules/lucide-static/icons/${name}.svg`];
+if (!loader) throw new Error(`Unknown icon "${name}"`);
+let svg = await loader();
+svg = svg.replace(/<!--[\s\S]*?-->/g, '').trim();
+svg = svg.replace(/\sclass="[^"]*"/, '');
+svg = svg.replace(/\swidth="24"/, size ? ` width="${size}"` : '').replace(/\sheight="24"/, size ? ` height="${size}"` : '');
+if (strokeWidth) svg = svg.replace(/stroke-width="2"/, `stroke-width="${strokeWidth}"`);
+svg = svg.replace('<svg', `<svg aria-hidden="true" focusable="false"${className ? ` class="${className}"` : ''}`);
+---
+
+<Fragment set:html={svg} />

@@ -1,0 +1,52 @@
+---
+import Icon from './Icon.astro';
+/**
+ * Call-to-action band: pitch on the left, form (slot) on a white card on the right.
+ * `anchorId` is the id of the card, so a "Contact Us Today" button can jump to the form.
+ */
+interface Props {
+  heading: string;
+  text: string;
+  email?: string;
+  button?: { label: string; href: string };
+  anchorId?: string;
+}
+const { heading, text, email, button, anchorId = 'lead-form' } = Astro.props;
+---
+
+<section class="cta" aria-labelledby="cta-heading">
+  <div class="container cta__inner">
+    <div class="cta__pitch">
+      <p class="eyebrow">Let's talk</p>
+      <h2 id="cta-heading">{heading}</h2>
+      <p class="cta__text">{text}</p>
+      {email && (
+        <p class="cta__mail">
+          <a href={`mailto:${email}`}><Icon name="mail" size={20} />{email}</a>
+        </p>
+      )}
+      {button && <a class="btn btn--gold cta__btn" href={button.href}>{button.label} <Icon name="arrow-right" /></a>}
+    </div>
+    <div class="cta__card" id={anchorId}>
+      <slot />
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta { position: relative; overflow: hidden; padding-block: var(--section-y); color: #fff;
+    background: radial-gradient(800px 380px at 10% 0%, rgb(200 150 30 / 0.22), transparent 60%), linear-gradient(135deg, var(--teal-950), var(--teal-800) 60%, var(--teal-700)); }
+  .cta::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgb(255 255 255 / 0.08) 1px, transparent 1px); background-size: 26px 26px; pointer-events: none; }
+  .cta__inner { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(2rem, 1rem + 4vw, 4.5rem); align-items: start; }
+  .cta .eyebrow { color: var(--gold-400); margin-bottom: var(--sp-3); }
+  .cta h2 { color: #fff; margin-bottom: var(--sp-4); }
+  .cta__text { font-size: var(--fs-md); color: rgb(255 255 255 / 0.9); max-width: 52ch; }
+  .cta__mail { margin-top: var(--sp-5); }
+  .cta__mail a { display: inline-flex; align-items: center; gap: var(--sp-3); padding: 0.75rem 1.1rem; border-radius: var(--radius-sm); background: rgb(255 255 255 / 0.1);
+    border: 1px solid rgb(255 255 255 / 0.28); color: #fff; font-weight: 600; text-decoration: none; overflow-wrap: anywhere; }
+  .cta__mail a:hover { background: rgb(255 255 255 / 0.18); color: #fff; }
+  .cta__mail :global(svg) { color: var(--gold-400); flex: none; }
+  .cta__btn { margin-top: var(--sp-5); }
+  .cta__card { background: #fff; color: var(--ink-soft); border-radius: var(--radius-lg); padding: clamp(1.25rem, 1rem + 1.5vw, 2.25rem); box-shadow: var(--shadow-lg); scroll-margin-top: calc(var(--header-h) + 16px); }
+  @media (max-width: 960px) { .cta__inner { grid-template-columns: 1fr; } }
+</style>
