@@ -1,0 +1,198 @@
+{
+  "slug": "cybersecurity",
+  "seo": {
+    "title": "Cybersecurity Solutions – Protecting Your Digital World | ASB Innovations",
+    "description": "End-to-end cybersecurity: 24/7 threat detection, incident response, vulnerability assessment, penetration testing, awareness training, compliance and managed security services."
+  },
+  "banner": {
+    "eyebrow": "Managed Services",
+    "title": "Cybersecurity Solutions",
+    "subtitle": "Protecting Your Digital World",
+    "art": "security",
+    "icon": "shield-check"
+  },
+  "brochure": "cybersecurity",
+  "sections": [
+    {
+      "type": "prose",
+      "paragraphs": [
+        "In today's fast-evolving digital landscape, businesses face unprecedented risks from cyber threats. With cyberattacks becoming more frequent, sophisticated, and destructive, organizations must take a proactive stance to protect their data, systems, and networks.",
+        "At ASB Innovations, we provide comprehensive, end-to-end Cybersecurity Solutions designed to protect your business from all angles. Our mission is to empower you to operate confidently in the digital world by offering robust, customizable, and highly effective cybersecurity services that safeguard your assets, customers, and reputation.",
+        "As your trusted cybersecurity partner, we leverage the latest technology, industry best practices, and expert knowledge to deliver solutions that minimize risk and maximize your security posture."
+      ]
+    },
+    {
+      "type": "services",
+      "eyebrow": "What we offer",
+      "heading": "Our Cybersecurity Services",
+      "intro": "We offer a wide range of cybersecurity services tailored to meet the specific needs of your organization. Whether you're a small business, a growing enterprise, or a global organization, we have the expertise and technology to ensure your digital infrastructure is fully protected.",
+      "items": [
+        {
+          "title": "Threat Detection and Monitoring",
+          "subtitle": "Real-Time Monitoring for Proactive Defence",
+          "paragraphs": [
+            "Cyberattacks often happen in the background, unnoticed until it's too late. Our 24/7 threat detection and monitoring services provide constant surveillance of your network, systems, and endpoints to identify potential threats in real time.",
+            "Using advanced Security Information and Event Management (SIEM) tools, we continuously monitor your infrastructure for suspicious activity, malware, unauthorized access, and other vulnerabilities. Our proactive approach ensures that threats are detected early, enabling us to respond immediately and prevent any significant damage to your business."
+          ],
+          "features": [
+            "Continuous, round-the-clock monitoring",
+            "Real-time alerts for potential threats",
+            "Automated threat intelligence feeds",
+            "Early identification of malware, ransomware, and phishing attempts"
+          ],
+          "icon": "radar"
+        },
+        {
+          "title": "Incident Response",
+          "subtitle": "Rapid Response to Minimize Impact",
+          "paragraphs": [
+            "In the event of a cyberattack or breach, speed is essential. Our Incident Response service is designed to contain, mitigate, and resolve security incidents as quickly as possible, minimizing downtime and operational disruption.",
+            "We follow a structured, systematic approach to incident management, including immediate isolation of compromised systems, a thorough investigation to determine the attack vector, and remediation to restore your systems to normal operation. Our team works tirelessly to get you back on track with minimal impact to your business operations."
+          ],
+          "features": [
+            "Fast response to security breaches and incidents",
+            "Root cause analysis and impact assessment",
+            "Remediation and recovery planning",
+            "Post-incident reporting and compliance assurance"
+          ],
+          "icon": "siren"
+        },
+        {
+          "title": "Vulnerability Assessment",
+          "subtitle": "Identifying Weaknesses Before Cybercriminals Do",
+          "paragraphs": [
+            "Security vulnerabilities in your systems can leave you open to attacks that could jeopardize your business. Our Vulnerability Assessment service identifies weaknesses in your infrastructure and applications by performing regular scans and penetration tests.",
+            "We examine your network configurations, software, firewalls, and other critical components to detect potential vulnerabilities before cybercriminals exploit them. After identifying weaknesses, we provide clear, actionable steps to mitigate risks, patch vulnerabilities, and strengthen your security measures."
+          ],
+          "features": [
+            "Comprehensive scanning for internal and external vulnerabilities",
+            "Risk prioritization based on potential impact",
+            "Detailed, actionable remediation plans",
+            "Regular vulnerability assessments to keep your systems secure"
+          ],
+          "icon": "file-search"
+        },
+        {
+          "title": "Penetration Testing",
+          "subtitle": "Simulated Attacks to Test Your Defences",
+          "paragraphs": [
+            "One of the most effective ways to assess your security measures is to simulate real-world cyberattacks. Penetration Testing (also known as ethical hacking) is a critical component of a robust security strategy, as it helps identify exploitable weaknesses in your network before an actual attacker does.",
+            "Our certified security experts carry out simulated attacks on your systems, mimicking common cyberattack techniques to evaluate your defences' effectiveness. Afterward, we provide you with a detailed report outlining vulnerabilities and recommend measures to close any gaps in your security."
+          ],
+          "features": [
+            "Simulated attacks targeting your network, web applications, and infrastructure",
+            "Identifying weak spots in encryption, authentication, and access controls",
+            "Remediation and strengthening of vulnerable areas",
+            "Comprehensive reports with actionable insights"
+          ],
+          "icon": "crosshair"
+        },
+        {
+          "title": "Security Awareness Training",
+          "subtitle": "Empowering Your Team to Prevent Attacks",
+          "paragraphs": [
+            "The human factor is often the weakest link in cybersecurity. Many cyberattacks begin with an employee clicking on a malicious link or downloading a compromised file. Our Security Awareness Training equips your staff with the knowledge and tools to recognize and prevent security threats.",
+            "We provide customized training programs tailored to your organization's unique challenges, teaching your employees best practices in cybersecurity, how to identify phishing emails, avoid suspicious links, and safely handle sensitive data. By fostering a culture of security awareness, you can significantly reduce the risk of a breach originating from within your organization."
+          ],
+          "features": [
+            "Regular training sessions and phishing simulations",
+            "Interactive, engaging content customized to your company",
+            "Ongoing security awareness campaigns",
+            "Practical tips for everyday cybersecurity hygiene"
+          ],
+          "icon": "graduation-cap"
+        },
+        {
+          "title": "Compliance Management",
+          "subtitle": "Ensuring Adherence to Industry Standards and Regulations",
+          "paragraphs": [
+            "Compliance with industry regulations such as GDPR, HIPAA, PCI DSS, and SOC 2 is critical for protecting sensitive customer and business data. Failure to comply can result in significant fines, reputational damage, and legal consequences.",
+            "Our Compliance Management services help ensure that your business meets all regulatory requirements, keeping your data secure and your operations compliant. We conduct thorough audits, implement compliance frameworks, and provide regular assessments to ensure your organization remains in good standing with regulatory bodies."
+          ],
+          "features": [
+            "Audits and gap analysis to ensure compliance with relevant standards",
+            "Assistance with regulatory documentation and reporting",
+            "Ongoing compliance monitoring",
+            "Expert guidance on maintaining long-term compliance"
+          ],
+          "icon": "file-check"
+        },
+        {
+          "title": "Managed Security Services (MSS)",
+          "subtitle": "Comprehensive, Around-the-Clock Security Management",
+          "paragraphs": [
+            "Cybersecurity is a continuous process, and managing it in-house can be overwhelming. Our Managed Security Services (MSS) offer complete, outsourced security management, allowing your business to enjoy the benefits of full-time protection without the need for a dedicated in-house team.",
+            "We offer 24/7 monitoring, proactive threat detection, incident management, and regular vulnerability assessments. Our MSS allow your organization to scale its security infrastructure without the expense of maintaining an internal security operations team."
+          ],
+          "features": [
+            "Round-the-clock monitoring and real-time response",
+            "Expert management of firewalls, anti-virus software, and other security tools",
+            "Continuous threat intelligence and analysis",
+            "Scalable solutions to meet your growing security needs"
+          ],
+          "icon": "shield-check"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "variant": "cards",
+      "eyebrow": "Why ASB",
+      "heading": "Why Choose ASB Innovations for Your Cybersecurity?",
+      "intro": "When you partner with ASB Innovations, you gain a team of highly skilled, certified cybersecurity professionals who are committed to protecting your business from cyber threats. Here's why businesses trust us to safeguard their digital infrastructure:",
+      "items": [
+        {
+          "title": "Robust and Proactive Defence",
+          "body": "We focus on a proactive approach to cybersecurity—identifying risks, patching vulnerabilities, and preventing breaches before they happen. Our expert team uses the latest technologies and tools to stay ahead of cybercriminals, ensuring that your defences remain strong and effective.",
+          "icon": "shield-check"
+        },
+        {
+          "title": "Cost-Efficient Cybersecurity Solutions",
+          "body": "Maintaining an in-house security team can be costly, especially for smaller businesses. By outsourcing your cybersecurity to us, you reduce the overhead costs of hiring, training, and retaining full-time experts. Our services are both affordable and scalable, making them accessible for businesses of all sizes.",
+          "icon": "piggy-bank"
+        },
+        {
+          "title": "Expertise and Experience",
+          "body": "Our team consists of seasoned cybersecurity professionals with years of experience working with businesses across different industries. We bring deep knowledge of threat landscapes, security best practices, and regulatory requirements, ensuring your organization is fully protected.",
+          "icon": "badge-check"
+        },
+        {
+          "title": "Scalability and Flexibility",
+          "body": "As your business grows, your cybersecurity needs evolve. Our solutions are designed to scale with your business, providing the flexibility to adapt as your requirements change. Whether you need comprehensive protection or specific services, we can customize our offerings to fit your needs.",
+          "icon": "sliders-horizontal"
+        },
+        {
+          "title": "Peace of Mind",
+          "body": "Cybersecurity threats are constantly evolving, and it's challenging to keep up. By outsourcing your security to ASB Innovations, you can rest assured that your organization is in expert hands. We provide continuous monitoring, rapid incident response, and regular updates to ensure that your business stays secure in a dynamic threat environment.",
+          "icon": "handshake"
+        },
+        {
+          "title": "End-to-End Coverage",
+          "body": "We offer a comprehensive suite of cybersecurity services that covers all aspects of digital security—from threat detection and vulnerability management to compliance and incident response. With ASB Innovations, you have a trusted partner that provides end-to-end protection for your digital assets.",
+          "icon": "layers"
+        }
+      ]
+    },
+    {
+      "type": "prose",
+      "heading": "Get Started Today",
+      "paragraphs": [
+        "Don't wait until it's too late. Cyber threats are constantly evolving, and your organization needs to be prepared. ASB Innovations offers advanced, customizable cybersecurity solutions that protect your business from emerging risks.",
+        "Contact us today to learn how we can help safeguard your digital infrastructure, ensure regulatory compliance, and give you the peace of mind that your business is fully protected from cyber threats."
+      ]
+    }
+  ],
+  "cta": {
+    "heading": "Contact Us Today",
+    "text": "Ready to take your cybersecurity to the next level? Contact us to learn more about our services and how we can help protect your organization.",
+    "emailKey": "info",
+    "formKey": "info",
+    "fields": "standard",
+    "brochure": "cybersecurity",
+    "formTitle": "Request a cybersecurity consultation",
+    "button": {
+      "label": "Contact Us Today",
+      "href": "#lead-form"
+    }
+  }
+}

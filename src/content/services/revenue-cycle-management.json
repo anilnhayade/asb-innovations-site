@@ -1,0 +1,137 @@
+{
+  "slug": "revenue-cycle-management",
+  "seo": {
+    "title": "Revenue Cycle Management (RCM) Services | ASB Innovations",
+    "description": "End-to-end medical billing and revenue cycle management: registration, coding, claims, denial management, collections and reporting for U.S. healthcare providers."
+  },
+  "banner": {
+    "eyebrow": "Managed Services",
+    "title": "Revenue Cycle Management (RCM)",
+    "subtitle": "End-to-end medical billing support for clinics and hospitals",
+    "art": "medical-billing",
+    "icon": "stethoscope"
+  },
+  "brochure": "rcm",
+  "sections": [
+    {
+      "type": "prose",
+      "paragraphs": [
+        "In the healthcare industry, effective Revenue Cycle Management (RCM) is essential for ensuring that healthcare providers are reimbursed for the services they deliver while maintaining compliance with ever-evolving regulations. RCM refers to the process of managing the entire lifecycle of a medical claim, from patient registration through to the final payment and collections. Efficient RCM practices are vital not only for maintaining healthy cash flow but also for enhancing patient satisfaction and loyalty.",
+        "However, managing the RCM process is complex and time-consuming, requiring expertise in medical billing, coding, compliance, and insurance policies. For many clinics and hospitals, RCM represents a significant fixed cost, drawing attention away from their primary focus—patient care. Outsourcing this function can be a strategic move, helping healthcare providers streamline operations, reduce costs, and improve cash flow without sacrificing quality of care.",
+        "At ASB Innovations, we work as an extension of your healthcare organization to optimize and streamline your revenue cycle, reducing overhead while boosting efficiency. Our team of experienced professionals handles every aspect of RCM, from patient registration to claims management, helping your organization maximize reimbursements, minimize denials, and ensure timely payments."
+      ]
+    },
+    {
+      "type": "numbered",
+      "variant": "infographic",
+      "eyebrow": "What we do",
+      "heading": "Our RCM Services Include",
+      "intro": "Our end-to-end Revenue Cycle Management services cover all key stages of the billing process, ensuring accuracy, compliance, and improved financial outcomes:",
+      "items": [
+        {
+          "title": "Patient Registration",
+          "body": "Accurate patient registration is the foundation of a successful revenue cycle. Our team ensures that all patient information—such as personal details, insurance information, and medical history—is accurately collected and verified at the point of entry. Proper registration is critical to prevent claim rejections or delays later in the cycle.",
+          "icon": "user-plus"
+        },
+        {
+          "title": "Insurance Verification and Authorization",
+          "body": "Insurance verification is a crucial step to ensure that the patient's insurance plan covers the required services. We check the patient's eligibility, confirm coverage, and obtain necessary pre-authorizations for services to avoid claim denials or delays. This ensures that services are authorized before they are provided, allowing for smoother claims processing.",
+          "icon": "shield-check"
+        },
+        {
+          "title": "Medical Coding",
+          "body": "Accurate medical coding is vital for ensuring that healthcare services are properly documented and reimbursed. Our experienced coding specialists translate healthcare services, procedures, diagnoses, and equipment into universally recognized alphanumeric codes, following the latest coding guidelines (ICD-10, CPT, HCPCS). This ensures that claims are processed smoothly and reimbursed correctly.",
+          "icon": "file-text"
+        },
+        {
+          "title": "Charge Entry",
+          "body": "Once the services are coded, the next step is entering the information into the billing system. Our team ensures that all services rendered, along with their respective charges, are correctly entered into the system. Proper charge entry helps reduce errors and ensures timely reimbursement for healthcare providers.",
+          "icon": "receipt"
+        },
+        {
+          "title": "Claims Submission",
+          "body": "After charge entry, we submit claims to the appropriate insurance carriers or payers for reimbursement. We ensure that all claims are complete, accurate, and follow payer-specific guidelines to prevent rejections or delays. Our goal is to submit clean claims the first time, reducing the need for resubmissions and speeding up the payment process.",
+          "icon": "send"
+        },
+        {
+          "title": "Payment Posting",
+          "body": "Payment posting involves recording payments received from insurance companies and patients into the healthcare provider's system. We track all payments accurately and ensure that the patient's balance is updated in real time. This allows providers to have a clear view of outstanding balances and helps in managing financial records more effectively.",
+          "icon": "wallet"
+        },
+        {
+          "title": "Denial Management",
+          "body": "Claim denials are a common challenge in the healthcare industry. Our team works diligently to identify the reasons behind denials, whether it's due to errors, incomplete information, or missed deadlines. We resubmit claims with corrections or appeals, ensuring that your organization recovers as much revenue as possible. Our proactive approach minimizes revenue leakage and maximizes reimbursement.",
+          "icon": "rotate-ccw"
+        },
+        {
+          "title": "Patient Billing",
+          "body": "For any remaining balance after insurance payments, we generate clear and accurate patient bills. We provide transparent billing statements that are easy to understand, helping patients make prompt payments. Our patient billing services are designed to ensure that patients are billed correctly and on time, reducing confusion and fostering positive patient relationships.",
+          "icon": "mail"
+        },
+        {
+          "title": "Collections",
+          "body": "Our collections team follows up on unpaid patient balances, sending reminders, and coordinating with collection agencies when necessary. We maintain a compassionate approach to collections, balancing timely payments with maintaining strong patient relationships. Our aim is to recover outstanding payments while ensuring a positive patient experience.",
+          "icon": "phone-call"
+        },
+        {
+          "title": "Reporting and Analysis",
+          "body": "We provide regular, detailed reports on the performance of your billing and collections processes. These reports offer insights into claim status, payment trends, denial rates, and overall revenue cycle performance. Our advanced analytics help you identify bottlenecks, improve operational efficiency, and make data-driven decisions to optimize your financial health.",
+          "icon": "chart-column"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "variant": "showcase",
+      "eyebrow": "The ASB advantage",
+      "heading": "Why Choose ASB Innovations for Your RCM Needs?",
+      "items": [
+        {
+          "title": "Expertise in U.S. Healthcare Billing and Compliance",
+          "body": "Our team has extensive experience working with the complexities of U.S. medical billing, coding standards, and regulatory compliance, including HIPAA, ensuring that your practice stays compliant with the latest healthcare laws.",
+          "icon": "shield-check"
+        },
+        {
+          "title": "Improved Cash Flow",
+          "body": "By outsourcing RCM to us, you can reduce delays, minimize denials, and streamline payment processes, leading to quicker reimbursements and a healthier cash flow for your organization.",
+          "icon": "trending-up"
+        },
+        {
+          "title": "Cost-Efficiency",
+          "body": "Our services allow you to reduce the fixed overhead costs of maintaining an in-house billing team, without compromising on accuracy or service quality.",
+          "icon": "piggy-bank"
+        },
+        {
+          "title": "Scalability",
+          "body": "Whether you're a small clinic or a large hospital system, we can scale our services to meet your specific needs, adapting as your organization grows or faces changing healthcare regulations.",
+          "icon": "layers"
+        },
+        {
+          "title": "Focus on Patient Care",
+          "body": "By outsourcing the time-consuming billing and coding tasks to us, your team can focus on delivering exceptional patient care without the distraction of complex administrative processes.",
+          "icon": "stethoscope"
+        },
+        {
+          "title": "Improved Patient Satisfaction",
+          "body": "Our accurate billing, clear communication, and timely follow-ups ensure that patients understand their financial responsibilities and can pay their bills without confusion or frustration.",
+          "icon": "badge-check"
+        }
+      ]
+    },
+    {
+      "type": "prose",
+      "paragraphs": [
+        "At ASB Innovations, we understand the intricacies of the healthcare revenue cycle and are committed to providing end-to-end solutions that streamline operations, reduce costs, and enhance financial outcomes. By partnering with us, healthcare providers can focus on what they do best—delivering exceptional care—while we handle the complexities of their revenue cycle."
+      ]
+    }
+  ],
+  "cta": {
+    "heading": "Book a FREE diagnostic discussion",
+    "text": "To book a FREE diagnostic discussion with our RCM Expert, please fill this form or send an email to",
+    "emailKey": "info",
+    "formKey": "info",
+    "fields": "standard",
+    "brochure": "rcm",
+    "formTitle": "Talk to our RCM expert"
+  }
+}

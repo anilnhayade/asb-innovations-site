@@ -1,0 +1,153 @@
+{
+  "slug": "it-hardware-rental",
+  "seo": {
+    "title": "IT Hardware Rental & Sales in Mumbai | ASB Innovations",
+    "description": "Rent or buy laptops and desktops with flexible terms, full support and quick deployment across Mumbai Metropolitan Region, Thane and Navi Mumbai."
+  },
+  "banner": {
+    "eyebrow": "Hardware",
+    "title": "IT Hardware Rental and Sales",
+    "subtitle": "Cost-Effective IT Solutions for Growing Businesses",
+    "art": "hardware",
+    "icon": "laptop"
+  },
+  "brochure": "hardware",
+  "sections": [
+    {
+      "type": "prose",
+      "paragraphs": [
+        "In today's rapidly evolving business landscape, technology is integral to staying competitive. However, the upfront cost of acquiring IT hardware, such as laptops and desktops, can be a significant hurdle, especially for small businesses, startups, and freelancers. Beyond the initial investment, businesses also face the challenges of maintaining and upgrading hardware, which can be both time-consuming and expensive.",
+        "At ASB Innovations, we provide an innovative Hardware Rental Service that offers an affordable, flexible, and efficient way to equip your business with the IT infrastructure you need without the financial burden of large capital expenditures. Whether you're just starting out or expanding rapidly, our rental services are designed to grow with your business needs."
+      ]
+    },
+    {
+      "type": "cards",
+      "variant": "cards",
+      "eyebrow": "Why rent",
+      "heading": "Why Choose Our Hardware Rental Services?",
+      "items": [
+        {
+          "title": "Affordable IT Solutions for Every Business Size",
+          "body": "Whether you're a freelancer, a small startup, an MSME, or a large enterprise, our hardware rental options allow you to acquire the IT equipment you need without committing to high upfront costs. For small businesses or those just starting out, renting hardware is an ideal solution to avoid the financial strain of purchasing expensive equipment while still having access to the latest technology.\n\nFor larger businesses or enterprises, renting allows you to scale your IT infrastructure quickly without worrying about the depreciation of assets or the high cost of buying new equipment every time your needs change.",
+          "icon": "coins"
+        },
+        {
+          "title": "Flexible, Scalable Rental Plans",
+          "body": "Our rental solutions are tailored to meet the dynamic needs of your business. As your business grows, your hardware requirements evolve, and ASB Innovations gives you the flexibility to scale up or down as needed. Need to add more computers as you expand your team? No problem. Renting allows you to flexibly adjust your resources based on your current project demands or workforce size.\n\nAdditionally, by renting hardware, you don't have to worry about long-term commitments or being locked into one type of equipment. Whether you need high-performance laptops for specific projects or standard desktops for everyday office tasks, we provide options that can be adjusted to suit your needs.",
+          "icon": "sliders-horizontal"
+        },
+        {
+          "title": "No Maintenance Hassles - Full Support Included",
+          "body": "One of the significant benefits of renting your hardware through ASB Innovations is that maintenance and support are included in the service. Rather than managing technical issues and repairs on your own, you can rely on our expert support team to handle any problems that arise. We ensure your equipment remains in top condition, minimizing downtime and keeping your operations running smoothly.\n\nOur dedicated IT support team is available to quickly troubleshoot and resolve issues, so you don't have to spend valuable time dealing with technical problems. Whether it's a hardware malfunction or software-related issue, we're just a call away.",
+          "icon": "wrench"
+        },
+        {
+          "title": "Access to the Latest Technology",
+          "body": "With technology evolving at a rapid pace, keeping up with the latest hardware can be a challenge. Purchasing new equipment every time a more advanced model is released can be costly and inefficient. Renting hardware gives you the flexibility to access the latest and most advanced technology as soon as it becomes available, without the burden of having to continually purchase and upgrade equipment.\n\nOur laptops and desktop computers are always equipped with the latest specifications, ensuring your team has access to powerful, high-performance devices that meet the demands of modern business applications and software.",
+          "icon": "zap"
+        },
+        {
+          "title": "Hassle-Free Returns and Upgrades",
+          "body": "Unlike owning equipment, renting provides you with the option to easily return or upgrade your hardware as your business needs change. If your business grows and you need more powerful machines, or if you need to change your configuration for a new project, upgrading or switching hardware is straightforward.\n\nWe also offer short-term and long-term rental contracts, so you can choose what works best for your business timeline. Whether you need equipment for a specific project or for ongoing use, we provide flexible terms to ensure your business stays agile and adaptable.",
+          "icon": "refresh-cw"
+        },
+        {
+          "title": "Competitive Rates for Hardware Purchases",
+          "body": "If you decide that owning your IT hardware is the best option for your business, we also offer competitive rates on hardware purchases. Our purchase options allow you to buy the hardware you've been renting at a reduced cost, ensuring that you can transition from rental to ownership seamlessly when you're ready to make a long-term investment.",
+          "icon": "hand-coins"
+        }
+      ]
+    },
+    {
+      "type": "bullets",
+      "variant": "labelled",
+      "eyebrow": "Our offering",
+      "heading": "What We Offer",
+      "items": [
+        {
+          "title": "High-Quality Laptops and Desktops",
+          "body": "Choose from a wide range of configurations tailored to your specific needs. Whether it's a lightweight laptop for frequent travel or a desktop with high processing power for software development or design, we have the right equipment for you."
+        },
+        {
+          "title": "Flexible Rental Periods",
+          "body": "We offer both short-term and long-term rental options, allowing you to rent hardware for the duration that fits your project needs or business timeline."
+        },
+        {
+          "title": "Tailored Configurations",
+          "body": "Custom configurations based on your business requirements, from basic office tasks to high-end computing for specialized functions like graphic design, programming, or data analysis."
+        },
+        {
+          "title": "Comprehensive IT Support",
+          "body": "Full maintenance and technical support services included, ensuring your equipment stays operational and efficient."
+        },
+        {
+          "title": "Cost Savings",
+          "body": "Avoid the large upfront capital expense and reduce operational costs by paying a fixed, predictable rental fee, leaving you with more resources to invest in growing your business."
+        },
+        {
+          "title": "Rapid Deployment",
+          "body": "Quickly set up your business or expand your IT capabilities, without the delays associated with purchasing and waiting for hardware delivery."
+        }
+      ]
+    },
+    {
+      "type": "area",
+      "heading": "Service Areas",
+      "paragraphs": [
+        "Currently, our Hardware Rental Services are available within the Mumbai Metropolitan Region, including Thane District and Navi Mumbai. If you're based in these areas, you can benefit from our quick delivery, setup, and ongoing support services."
+      ],
+      "places": [
+        "Mumbai Metropolitan Region",
+        "Thane District",
+        "Navi Mumbai"
+      ]
+    },
+    {
+      "type": "bullets",
+      "variant": "labelled",
+      "eyebrow": "Why ASB",
+      "heading": "Why Rent from ASB Innovations?",
+      "items": [
+        {
+          "title": "Cost-Effective",
+          "body": "Save on initial capital expenses and maintain a predictable IT budget with flexible rental plans."
+        },
+        {
+          "title": "Scalability",
+          "body": "Easily scale up or down as your business needs change, with no commitment to long-term purchases."
+        },
+        {
+          "title": "Access to Latest Technology",
+          "body": "Stay ahead of the curve with access to high-performance, up-to-date equipment."
+        },
+        {
+          "title": "Maintenance & Support Included",
+          "body": "No need to worry about repairs and technical issues—our team is always ready to help."
+        },
+        {
+          "title": "Flexible Terms",
+          "body": "Customize rental periods and configurations to suit your business timeline and project needs."
+        },
+        {
+          "title": "Quick Deployment",
+          "body": "Get the equipment you need, fast, and start using it immediately without the delays of traditional purchasing."
+        }
+      ],
+      "closing": "Start scaling your business today with ASB Innovations' flexible and affordable hardware rental services. No more capital outlay, no more maintenance headaches—just the technology you need to succeed. Contact us today to learn more about how we can help power your business with the right IT hardware."
+    },
+    {
+      "type": "image",
+      "src": "/images/it-hardware.svg",
+      "alt": "Illustration of laptops, a desktop computer and a network modem"
+    }
+  ],
+  "cta": {
+    "heading": "Submit your requirements",
+    "text": "Submit your requirements by filling this form or send an email to",
+    "emailKey": "hardware",
+    "formKey": "hardware",
+    "fields": "hardware",
+    "brochure": "hardware",
+    "formTitle": "Hardware requirements"
+  }
+}

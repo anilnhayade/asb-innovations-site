@@ -1,0 +1,90 @@
+{
+  "seo": {
+    "title": "ASB Innovations | Managed IT, Cloud, Cybersecurity & Offshore Services",
+    "description": "ASB Innovations delivers managed IT services, cybersecurity, cloud infrastructure, IT staffing and hardware rental to enterprises, MSMEs, startups and freelancers. Innovate. Integrate. Accelerate."
+  },
+  "hero": {
+    "eyebrow": "Innovate • Integrate • Accelerate",
+    "title": "ASB Innovations – Your Partner in Business Excellence",
+    "subtitle": "A comprehensive suite of solutions designed to meet the diverse needs of large enterprises, MSMEs, startups, and freelancers.",
+    "primaryCta": { "label": "Explore our offerings", "href": "#offerings" },
+    "secondaryCta": { "label": "Contact us", "href": "/contact" },
+    "badges": ["24/7, 365 days a year", "On-premise and cloud", "Offshore delivery from Mumbai, India"]
+  },
+  "intro": {
+    "eyebrow": "Who we are",
+    "paragraphs": [
+      "At ASB Innovations, we specialize in delivering high-quality services and solutions that empower you to manage your information infrastructure and business processes with greater security and efficiency. Our team of talented professionals, with their diverse skill sets and extensive industry experience, is driven by a passion for providing exceptional solutions and services."
+    ],
+    "goalsLead": "We focus on helping our clients achieve the following:",
+    "goals": [
+      { "icon": "server", "title": "Build", "body": "Build and manage a secure, scalable, and robust information management infrastructure with both on-premise and cloud-based IT services." },
+      { "icon": "piggy-bank", "title": "Save", "body": "Achieve significant cost savings through offshore software development, project management, and staffing solutions." },
+      { "icon": "gauge", "title": "Optimize", "body": "Optimize technology usage for business processes, delivering key advantages in cost, time, and quality." }
+    ],
+    "closing": "Our unwavering commitment to excellence, customer satisfaction, and long-term partnerships sets us apart. When you choose ASB Innovations, you are partnering with a reliable, innovative company dedicated to your success."
+  },
+  "offerings": {
+    "eyebrow": "What we do",
+    "title": "Our Offerings",
+    "intro": "We offer a comprehensive suite of solutions designed to meet the diverse needs of large enterprises, MSMEs, startups, and freelancers."
+  },
+  "managed": {
+    "title": "Managed Services",
+    "paragraphs": [
+      "ASB Innovations is a full-service provider of IT solutions, cybersecurity, and managed IT services, available 24/7, 365 days a year. Whether you need us to fully manage, co-manage, or support your IT and cybersecurity requirements, we are here to help—so you can focus on your core business priorities.",
+      "Our approach is holistic, ensuring that all aspects of your IT and cybersecurity needs are addressed with precision and expertise."
+    ],
+    "steps": [
+      { "icon": "radar", "label": "Track" },
+      { "icon": "sliders-horizontal", "label": "Control" },
+      { "icon": "gauge", "label": "Optimize" },
+      { "icon": "trending-up", "label": "Enhance" },
+      { "icon": "shield-check", "label": "Secure" },
+      { "icon": "chart-column", "label": "Report" }
+    ],
+    "services": [
+      { "icon": "stethoscope", "title": "Revenue Cycle Management", "href": "/services/revenue-cycle-management" },
+      { "icon": "workflow", "title": "Offshore Project Management", "href": "/services/offshore-project-management" },
+      { "icon": "calculator", "title": "QuickBooks Accounting Management", "href": "/services/quickbooks-accounting" },
+      { "icon": "network", "title": "Network Operations Management", "href": "/services/noc-management" },
+      { "icon": "eye", "title": "Security Operations Management", "href": "/services/soc-management" },
+      { "icon": "shield-check", "title": "Cybersecurity Management", "href": "/services/cybersecurity" }
+    ]
+  },
+  "cloud": {
+    "title": "Cloud Infrastructure Solutions",
+    "paragraphs": [
+      "Our Cloud Infrastructure Solutions offer a comprehensive suite of services and technologies designed to optimize and elevate your business operations through cloud computing. These solutions provide access to virtualized computing resources via the internet, supporting both hybrid and multi-cloud strategies that deliver unmatched flexibility and scalability.",
+      "By leveraging cloud infrastructure, organizations can streamline their IT resources, boost agility, and reduce the costs associated with maintaining on-premise hardware. Additionally, cloud infrastructure enables the seamless integration of advanced technologies such as IoT, AI, and quantum computing, empowering businesses to innovate and stay ahead of evolving market demands.",
+      "We have deep expertise in leading cloud platforms, including Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform, ensuring that your cloud journey is both efficient and future-proof."
+    ],
+    "platforms": ["Amazon Web Services (AWS)", "Microsoft Azure", "Google Cloud Platform (GCP)"],
+    "services": [
+      { "icon": "cloud-upload", "title": "Cloud Enablement" },
+      { "icon": "puzzle", "title": "Cloud Integration" },
+      { "icon": "database-backup", "title": "Backup & Disaster Recovery" },
+      { "icon": "file-check", "title": "Security Compliance Management" },
+      { "icon": "headset", "title": "Remote Support" }
+    ]
+  },
+  "staffing": {
+    "title": "IT Staffing",
+    "paragraphs": [
+      "Accelerate the growth and scalability of your offshore operations with our expert IT staffing services.",
+      "Our team consists of highly experienced professionals with deep technical expertise and domain knowledge, enabling us to efficiently onboard skilled resources for your offshore projects. Whether you need to expand your team quickly or find specialized talent, we are here to help you build a strong, capable workforce tailored to your business needs."
+    ],
+    "image": { "src": "/images/it-staffing.svg", "alt": "Illustration of a distributed IT team collaborating around a shared dashboard" }
+  },
+  "hardware": {
+    "title": "IT Hardware Rental and Sales",
+    "paragraphs": [
+      "Whether you're a freelancer, startup, MSME, or a large enterprise establishing a presence in and around Mumbai, we offer tailored IT hardware solutions to suit your specific needs. Our IT hardware rental service allows you to acquire high-quality, secure, and reliable laptops and desktop computers without the upfront costs, giving you the flexibility to scale your operations quickly and cost-effectively.",
+      "We provide a wide range of IT hardware configurations, allowing you to select the specifications that best fit your business requirements. Whether you need basic office equipment or high-performance systems for specialized tasks, our rental options give you the flexibility to adjust as your needs evolve. Renting allows you to manage variable costs, reduce capital expenditure, and avoid the long-term maintenance commitments associated with owning hardware.",
+      "For those looking to purchase new equipment, we also offer competitive rates for the purchase of brand-new laptops, desktops, and other IT hardware. If you prefer to own your equipment rather than rent, we provide reliable and cost-effective hardware solutions that are ready for deployment.",
+      "Our services cater to businesses of all sizes, from startups looking to minimize initial costs to large enterprises in need of reliable, scalable hardware for rapid growth. We aim to ensure your business has access to the latest technology, with minimal hassle and maximum efficiency."
+    ],
+    "cta": { "label": "Explore hardware rental", "href": "/services/it-hardware-rental" },
+    "image": { "src": "/images/it-hardware.svg", "alt": "Illustration of laptops, a desktop computer and a network modem" }
+  }
+}

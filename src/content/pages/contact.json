@@ -1,0 +1,32 @@
+{
+  "seo": {
+    "title": "Contact ASB Innovations | Talk to Our Team",
+    "description": "Get in touch with ASB Innovations for managed services, cybersecurity, cloud, IT staffing and hardware rental. Send an enquiry and download our company profile."
+  },
+  "banner": {
+    "eyebrow": "Contact",
+    "title": "Contact Us",
+    "subtitle": "Tell us about your requirements and our team will get back to you.",
+    "art": "contact",
+    "icon": "mail"
+  },
+  "form": {
+    "title": "Send us an enquiry",
+    "intro": "Share your details below and tell us how we can help."
+  },
+  "emails": {
+    "title": "Write to us",
+    "intro": "Reach the right team directly:",
+    "items": [
+      { "key": "info", "label": "General enquiries, RCM, SOC, QuickBooks, Cybersecurity and Project Management" },
+      { "key": "noc", "label": "Network Operations Centre (NOC)" },
+      { "key": "hardware", "label": "IT Hardware Rental and Sales" }
+    ]
+  },
+  "downloads": {
+    "eyebrow": "Company Downloads",
+    "title": "Company Downloads",
+    "intro": "Submit the enquiry form above to unlock our company brochures.",
+    "brochure": "company"
+  }
+}
